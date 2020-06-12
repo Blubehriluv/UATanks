@@ -21,17 +21,27 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            playerTF.position += Vector3.forward * playerForwardSpeed;
+            Vector3 wantedPosition =
+                playerTF.position + (playerTF.forward * playerForwardSpeed * Time.deltaTime);
+            playerRB.MovePosition(wantedPosition);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            playerTF.position += Vector3.back * playerBackSpeed;
+            Vector3 wantedPosition =
+                playerTF.position - (playerTF.forward * playerBackSpeed * Time.deltaTime);
+            playerRB.MovePosition(wantedPosition);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            Quaternion wantedRotation = playerTF.rotation * Quaternion.Euler(Vector3.up * playerTurnSpeed);
+            playerRB.MoveRotation(wantedRotation);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            Quaternion wantedRotation = playerTF.rotation * Quaternion.Euler(Vector3.up * playerTurnSpeed);
+            Quaternion wantedRotation = playerTF.rotation * Quaternion.Euler(Vector3.down * playerTurnSpeed);
             playerRB.MoveRotation(wantedRotation);
         }
     }
