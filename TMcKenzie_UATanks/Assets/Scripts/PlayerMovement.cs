@@ -6,9 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
     public Transform playerTF;
     public Rigidbody playerRB;
-    public float playerForwardSpeed = 0.09f;
-    public float playerBackSpeed = 0.03f;
-    public float playerTurnSpeed = 0.3f;
+    public static float playerForwardSpeed;
+    public static float playerBackSpeed;
+    public static float playerTurnSpeed;
     private GameObject torpedo;
     private GameObject tree;
 
@@ -50,22 +50,20 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void OnCollisionEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other == torpedo)
+        if (collision.collider.gameObject.tag == "torpedo")
         {
-            Debug.Log("OUCH");
+            Debug.Log("ouch");
         }
-
-        if (other == tree)
+        if (collision.collider.gameObject.tag == "tree")
         {
-            Debug.Log("who put that tree there");
-
+            Debug.Log("who put dat tree here");
         }
-
-        if (other != torpedo && other != tree)
+        if (collision.collider.gameObject.tag != "Enemy" && collision.collider.gameObject.tag != "tree")
         {
-            Debug.Log("Gotta watch where I'm goin'!");
+            Debug.Log("something got hit");
+            //Destroy(gameObject);
         }
     }
 }

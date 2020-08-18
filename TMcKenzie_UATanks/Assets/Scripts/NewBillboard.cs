@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDamageTaken : MonoBehaviour
+public class NewBillboard : MonoBehaviour
 {
+    
+    public Camera cameraToLookAt;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        transform.LookAt(cameraToLookAt.transform);
     }
 }

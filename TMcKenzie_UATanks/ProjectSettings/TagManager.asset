@@ -6,6 +6,7 @@ TagManager:
   tags:
   - torpedo
   - tree
+  - Enemy
   layers:
   - Default
   - TransparentFX
