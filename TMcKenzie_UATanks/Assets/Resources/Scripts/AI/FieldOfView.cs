@@ -7,7 +7,6 @@ public class FieldOfView : MonoBehaviour
     public float viewRadius;
     [Range(0,360)]
     public float viewAngle;
-
     public LayerMask targetMask;
     public LayerMask obstacleMask;
     [HideInInspector]
@@ -38,13 +37,11 @@ public class FieldOfView : MonoBehaviour
             Vector3 dirToTarget = (target.position - transform.position).normalized;
             if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
             {
-                
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
                 
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
                     Debug.Log("I can see you");
-                    //ChasePlayer();
                     visibleTargets.Add(target);
                 }
                 
@@ -60,9 +57,11 @@ public class FieldOfView : MonoBehaviour
         }
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
+
+
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
