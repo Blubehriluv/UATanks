@@ -44,7 +44,6 @@ public class FieldOfView : MonoBehaviour
                     Debug.Log("I can see you");
                     visibleTargets.Add(target);
                 }
-                
             }
         }
     }

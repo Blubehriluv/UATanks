@@ -11,6 +11,7 @@ public class EnemyFire : MonoBehaviour
     public static float enemyThrust;
     public static float enemyBulletTimeout;
 
+
     void Start()
     {
         BeginCode();

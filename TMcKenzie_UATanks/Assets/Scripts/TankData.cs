@@ -28,31 +28,26 @@ public class TankData : MonoBehaviour
         CheckHealth();
         if (dataHealth > 81)
         {
-            Debug.Log("Most health!");
             healthbar.sprite = full;
         }
 
         if (dataHealth >= 61 && dataHealth <= 80)
         {
-            Debug.Log("One bar lost");
             healthbar.sprite = eighty;
         }
 
         if (dataHealth >= 41 && dataHealth <= 60)
         {
-            Debug.Log("Two bars lost");
             healthbar.sprite = sixty;
         }
 
         if (dataHealth >= 21 && dataHealth <= 40)
         {
-            Debug.Log("Three bars lost");
             healthbar.sprite = forty;
         }
 
         if (dataHealth >= 1 && dataHealth <= 20)
         {
-            Debug.Log("Four bars lost");
             healthbar.sprite = twenty;
         }
 

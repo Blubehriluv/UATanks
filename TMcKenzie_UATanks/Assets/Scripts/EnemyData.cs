@@ -9,6 +9,7 @@ public class EnemyData : MonoBehaviour
 {
 
     public static float enemyHealth;
+    float healthHolder = 450;
     public static float enemyCurrentHealth;
     private float dataHealth;
     public Image healthbar;
@@ -18,6 +19,7 @@ public class EnemyData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemyHealth = healthHolder;
         enemyCurrentHealth = enemyHealth;
     }
 
@@ -27,31 +29,26 @@ public class EnemyData : MonoBehaviour
         CheckHealth();
         if (dataHealth > 81)
         {
-            Debug.Log("Most enemy health!");
             healthbar.sprite = full;
         }
 
         if (dataHealth >= 61 && dataHealth <= 80)
         {
-            Debug.Log("One enemy bar lost");
             healthbar.sprite = eighty;
         }
 
         if (dataHealth >= 41 && dataHealth <= 60)
         {
-            Debug.Log("Two enemy bars lost");
             healthbar.sprite = sixty;
         }
 
         if (dataHealth >= 21 && dataHealth <= 40)
         {
-            Debug.Log("Three enemy bars lost");
             healthbar.sprite = forty;
         }
 
         if (dataHealth >= 1 && dataHealth <= 20)
         {
-            Debug.Log("Four enemy bars lost");
             healthbar.sprite = twenty;
         }
 
