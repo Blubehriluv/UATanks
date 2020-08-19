@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - torpedo
-  - tree
   - Enemy
+  - tree
   layers:
   - Default
   - TransparentFX
@@ -16,17 +16,10 @@ TagManager:
   - UI
   - 
   - 
-<<<<<<< HEAD
-  - Player
-  - Floor
-  - Obstacles
-  - Targets
-=======
   - 
   - 
   - 
   - 
->>>>>>> parent of 980a8c1... Created Fantastic FOV Script
   - 
   - 
   - 
