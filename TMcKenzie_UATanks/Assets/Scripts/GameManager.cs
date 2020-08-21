@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public List<Sprite> blueSprites; //full, eighty, sixty, forty, twenty, zero;
+
+    public List<Sprite> redSprites;// fullE, eightyE, sixtyE, fortyE, twentyE, zeroE;
+
     public float playerHealth;
     public float setShellDamage;
     public float fireRate;
@@ -34,8 +38,8 @@ public class GameManager : MonoBehaviour
 
     private int hitsTaken = 0;
     private int hitsGiven = 0;
-    private int tanksDestroyed = 0;
-    private int selfDestroyed = 0;
+    public int tanksDestroyed = 0;
+    public int selfDestroyed = 0;
 
     public int HitPointValue;
     public int DestroyPointValue;
@@ -45,11 +49,15 @@ public class GameManager : MonoBehaviour
     public float bulletTimeout;
     public float enemyBulletTimeout;
 
+  
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        TankData.playerHealth = playerHealth;
-        EnemyData.enemyHealth = enemyHealth;
+        //TankData.playerHealth = playerHealth;
+       // EnemyData.enemyHealth = enemyHealth;
         TorpedoHit.shellDamage = setShellDamage;
         TorpedoHit.enemyShellDamage = setEnemyShellDamage;
         PlayerMovement.playerForwardSpeed = playerForwardSpeed;
@@ -70,7 +78,7 @@ public class GameManager : MonoBehaviour
     {
         hitsTaken = TorpedoHit.hitsTaken;
         hitsGiven = TorpedoHit.hitsGiven;
-        tanksDestroyed = EnemyData.tanksDestroyed;
-        selfDestroyed = TankData.selfDestroyed;
+        //tanksDestroyed = EnemyData.tanksDestroyed;
+       // selfDestroyed = TankData.selfDestroyed;
     }
 }

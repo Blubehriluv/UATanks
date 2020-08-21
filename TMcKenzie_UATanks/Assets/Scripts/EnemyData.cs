@@ -8,18 +8,18 @@ using Debug = UnityEngine.Debug;
 public class EnemyData : MonoBehaviour
 {
 
-    public static float enemyHealth;
-    float healthHolder = 450;
-    public static float enemyCurrentHealth;
+    public  float enemyHealth = 450f;
+    public  float enemyCurrentHealth;
     private float dataHealth;
     public Image healthbar;
-    public Sprite full, eighty, sixty, forty, twenty, zero;
+    
     public GameObject self;
-    public static int tanksDestroyed;
+    public int tanksDestroyed;
     // Start is called before the first frame update
     void Start()
     {
-        enemyHealth = healthHolder;
+        self = gameObject;
+        healthbar = GetComponentInChildren<Image>();
         enemyCurrentHealth = enemyHealth;
     }
 
@@ -29,34 +29,35 @@ public class EnemyData : MonoBehaviour
         CheckHealth();
         if (dataHealth > 81)
         {
-            healthbar.sprite = full;
+            healthbar.sprite = GameManager.Instance.redSprites[0];
         }
 
         if (dataHealth >= 61 && dataHealth <= 80)
         {
-            healthbar.sprite = eighty;
+            healthbar.sprite = GameManager.Instance.redSprites[1];
         }
 
         if (dataHealth >= 41 && dataHealth <= 60)
         {
-            healthbar.sprite = sixty;
+            healthbar.sprite = GameManager.Instance.redSprites[2];
         }
 
         if (dataHealth >= 21 && dataHealth <= 40)
         {
-            healthbar.sprite = forty;
+            healthbar.sprite = GameManager.Instance.redSprites[3];
         }
 
         if (dataHealth >= 1 && dataHealth <= 20)
         {
-            healthbar.sprite = twenty;
+            healthbar.sprite = GameManager.Instance.redSprites[4];
         }
 
         if (dataHealth <= 0)
         {
             Debug.Log("Enemy died.");
-            healthbar.sprite = zero;
+            healthbar.sprite = GameManager.Instance.redSprites[5];
             tanksDestroyed++;
+            GameManager.Instance.tanksDestroyed += 1;
             Destroy(self);
         }
     }

@@ -43,6 +43,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTF: {fileID: 8907202271705862668}
   playerRB: {fileID: 8271014078537000479}
+--- !u!114 &8332878283973823466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7117964687810749885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39052853ae2e894489ee848155452bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 450
+  currentHealth: 0
+  enemyHealth: 0
+  self: {fileID: 0}
+  healthbar: {fileID: 0}
+  selfDestroyed: 0
 --- !u!114 &8271014078766781311
 MonoBehaviour:
   m_ObjectHideFlags: 0

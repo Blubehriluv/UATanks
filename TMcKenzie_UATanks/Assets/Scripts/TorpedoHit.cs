@@ -26,14 +26,14 @@ public class TorpedoHit : MonoBehaviour
     {
         if (collision.collider.gameObject.tag == "Enemy")
         {
-            EnemyData.enemyCurrentHealth = EnemyData.enemyCurrentHealth - shellDamage;
+            collision.collider.gameObject.GetComponent<EnemyData>().enemyCurrentHealth = collision.collider.gameObject.GetComponent<EnemyData>().enemyCurrentHealth - shellDamage;
             Debug.Log("Hit Enemy");
             hitsGiven++;
             Destroy(gameObject);
         }
         if (collision.collider.gameObject.tag == "Player")
         {
-            TankData.currentHealth = TankData.currentHealth - enemyShellDamage;
+            collision.collider.gameObject.GetComponent<TankData>().currentHealth = collision.collider.gameObject.GetComponent<TankData>().currentHealth - enemyShellDamage;
             Debug.Log("Hit Enemy");
             hitsTaken++;
             Destroy(gameObject);
