@@ -19,6 +19,7 @@ public class TankData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerHealth = 450;
         currentHealth = playerHealth;
     }
 

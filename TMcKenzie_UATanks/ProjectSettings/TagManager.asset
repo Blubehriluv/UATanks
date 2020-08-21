@@ -7,6 +7,9 @@ TagManager:
   - torpedo
   - Enemy
   - tree
+  - Door
+  - SpawnPoint
+  - Waypoint
   layers:
   - Default
   - TransparentFX
@@ -18,8 +21,8 @@ TagManager:
   - 
   - Targets
   - Obstacles
-  - 
-  - 
+  - Ground
+  - Player
   - 
   - 
   - 
