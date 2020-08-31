@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     public List<Sprite> redSprites;// fullE, eightyE, sixtyE, fortyE, twentyE, zeroE;
 
+    public SpawnPoint sp;
+
     public float playerHealth;
     public float setShellDamage;
     public float fireRate;

@@ -19,6 +19,7 @@ public class SpawnPoint : MonoBehaviour
     }
     void Start()
     {
+        GameManager.Instance.sp = this;
         respawnLocation = player.transform.position;
     }
 
@@ -31,7 +32,8 @@ public class SpawnPoint : MonoBehaviour
     public void SpawnPlayer()
     {
         int spawn = Random.Range(0, spawnLocations.Length);
-        GameObject.Instantiate(player, spawnLocations[spawn].transform.position, Quaternion.identity);
+        GameObject instance = GameObject.Instantiate(player, spawnLocations[spawn].transform.position, Quaternion.identity);
+        player = instance;
     }
 
     public void SpawnRed()
@@ -50,6 +52,12 @@ public class SpawnPoint : MonoBehaviour
     {
         int spawn4 = Random.Range(0, spawnLocations.Length);
         GameObject.Instantiate(greenEnemy, spawnLocations[spawn4].transform.position, Quaternion.identity);
+    }
+
+    public void MovePLayer() 
+    {
+        int spawn = Random.Range(0, spawnLocations.Length);
+        player.transform.position = spawnLocations[spawn].transform.position;
     }
     
 }

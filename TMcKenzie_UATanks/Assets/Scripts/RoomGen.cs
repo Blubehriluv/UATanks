@@ -105,6 +105,7 @@ public class RoomGen : MonoBehaviour
         sp.SpawnPlayer();
         sp.SpawnRed();
         sp.SpawnYellow();
+        sp.SpawnGreen();
     }
 
     public int DateToInt(DateTime dateToUse)

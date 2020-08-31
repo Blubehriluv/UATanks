@@ -13,8 +13,6 @@ public class TankData : MonoBehaviour
     public GameObject self;
     public Image healthbar;
     public  int selfDestroyed;
-
-
     
 
     // Start is called before the first frame update
@@ -61,8 +59,17 @@ public class TankData : MonoBehaviour
             healthbar.sprite = GameManager.Instance.blueSprites[5];
             selfDestroyed++;
             GameManager.Instance.selfDestroyed += 1;
-            Destroy(self);
+            SavePlayer();
+
+            //Destroy(self);
         }
+    }
+
+    void SavePlayer()
+    {
+        currentHealth = playerHealth;
+        healthbar.sprite = GameManager.Instance.blueSprites[0];
+        GameManager.Instance.sp.MovePLayer();
     }
 
     void CheckHealth()

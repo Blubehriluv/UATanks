@@ -6,7 +6,7 @@ public class EnemyChase : MonoBehaviour
 {
     public Transform player;
     public float turnSpeed = 5.0f;
-    public float speed = 100f;
+    public float speed = 4f;
     public float distanceToStop = 5f;
     public float step;
         
